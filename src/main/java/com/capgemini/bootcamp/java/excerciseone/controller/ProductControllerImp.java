@@ -12,14 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
-public class ProductControllerImp implements ProdcutController{
+public class ProductControllerImp implements ProductController{
 
     private final ProductService PRODUCT_SERVICE;
 
     public ProductControllerImp(ProductService productService){
         this.PRODUCT_SERVICE = productService;
     }
-
 
     @Override
     @PostMapping

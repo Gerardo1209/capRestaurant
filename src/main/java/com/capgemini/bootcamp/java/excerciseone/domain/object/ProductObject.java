@@ -1,14 +1,30 @@
 package com.capgemini.bootcamp.java.excerciseone.domain.object;
 
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProductObject {
 
+    @NotNull
+    @Min(0)
     private long id;
+
+    @NotNull(message = "The name is needed")
+    @Min(value = 2, message = "The name should be at least of two characters")
     private String name;
+
+    @NotNull(message = "The description is needed")
+    @Min(value=10, message = "The description should be at least of teen characters")
     private String description;
+
+    @NotNull(message = "The price is needed")
+    @DecimalMin(value = "0.01", message = "The price should be at least 0.01")
     private double price;
+
+    @NotNull(message = "The image is needed")
     private String image;
 
     public ProductObject(){}

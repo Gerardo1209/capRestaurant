@@ -4,6 +4,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 import java.sql.Timestamp;
 
@@ -13,6 +15,8 @@ public class ProductEntity {
 
     @Id
     @Column(name = "id")
+    @NotNull
+    @Min(0)
     private long id;
 
     @Column(name = "name")
