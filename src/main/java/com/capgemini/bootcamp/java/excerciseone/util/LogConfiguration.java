@@ -8,7 +8,15 @@ public class LogConfiguration {
 
     @Bean
     public LogManager createLogManager(){
-        return new LogManagerImp("product.log");
+        return processLog("product.log");
+    }
+
+    protected LogManager processLog(String log){
+        try{
+            return new LogManagerImp(log);
+        }catch (Exception e){
+            return null;
+        }
     }
 
 }

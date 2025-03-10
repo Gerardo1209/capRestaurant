@@ -51,4 +51,5 @@ public class ProductAspect {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         logManager.createLog(Level.INFO, "Execution -> " + joinPoint.getSignature(), authentication.getName());
     }
+
 }

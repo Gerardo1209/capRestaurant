@@ -77,7 +77,7 @@ public class ProductObject {
         this.image = image;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "ProductObject{" +
                 "id=" + id +
@@ -86,5 +86,5 @@ public class ProductObject {
                 ", price=" + price +
                 ", image='" + image + '\'' +
                 '}';
-    }
+    }*/
 }

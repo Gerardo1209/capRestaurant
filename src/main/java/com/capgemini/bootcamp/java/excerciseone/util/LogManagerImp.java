@@ -9,7 +9,7 @@ import java.util.logging.SimpleFormatter;
 public class LogManagerImp implements LogManager{
     private final static Logger logger = Logger.getLogger(LogManagerImp.class.getName());
 
-    public LogManagerImp(String logFile){
+    public LogManagerImp(String logFile) throws IOException {
         try {
             // Configure FileHandler
             FileHandler fileHandler = new FileHandler(logFile, true);
@@ -17,6 +17,7 @@ public class LogManagerImp implements LogManager{
             logger.addHandler(fileHandler);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Not possible to configure file handler for log", e);
+            throw e;
         }
     }
 

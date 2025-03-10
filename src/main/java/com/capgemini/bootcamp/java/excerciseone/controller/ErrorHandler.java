@@ -13,11 +13,14 @@ public class ErrorHandler {
         private String message;
         private long timeStamp;
 
+        public ErrorResponse(){}
+
         public ErrorResponse(
                 int status,
                 String message,
                 long timeStamp
         ){
+            this();
             this.status = status;
             this.message = message;
             this.timeStamp = timeStamp;

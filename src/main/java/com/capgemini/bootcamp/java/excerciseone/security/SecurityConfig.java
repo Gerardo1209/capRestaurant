@@ -28,10 +28,10 @@ public class SecurityConfig {
                 configure -> {
                     configure
                             .requestMatchers(HttpMethod.GET, "/").permitAll()
-                            .requestMatchers(HttpMethod.POST, "/").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.GET, "/api/product").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.GET, "/api/product/**").hasRole("ADMIN")
-                            .requestMatchers(HttpMethod.POST, "/api/product").hasRole("ADMIN")
+                            .requestMatchers(HttpMethod.POST, "/").permitAll()
+                            .requestMatchers(HttpMethod.GET, "/api/product").permitAll()
+                            .requestMatchers(HttpMethod.GET, "/api/product/**").permitAll()
+                            .requestMatchers(HttpMethod.POST, "/api/product").permitAll()
                             .requestMatchers(HttpMethod.GET, "/swagger-ui/**").permitAll()
                             .requestMatchers(HttpMethod.GET, "/v3/api-docs*/**").permitAll();
                 }
